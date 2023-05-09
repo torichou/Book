@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>The Nook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    integrity="sha384-XKxkPgEsoGi5rGzv3FHAOQ5d9OrtT1YtR86+4TMVjN5E9M/i0W8N3qP5z2dSKM9X" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css')}}">
+</head>
+
+<body>
+  <!--ChatGPT-generated base-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">The Nook</h1>
+        <div class="signup-box">
+          <h2 class="txt">SIGN IN</h2>
+          <form action="#" method="POST">
+            <div class="form-group">
+              <input type="text" class="form-control" id="username" name="username" placeholder="username*">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password" name="password" placeholder="password*">
+            </div>
+            <h3 class="txt">new here?
+              <a class="txt" href="{{url_for('signup')}}">sign up</a>
+            </h3>
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </form>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          {% for msg in messages %}
+          <p>{{msg}}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
